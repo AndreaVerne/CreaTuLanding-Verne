@@ -4,14 +4,16 @@ import ItemListContainer from './components/ItemListContainer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.scss';
 import './App.css'
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
 
   return (
     <>
-    <NavBar></NavBar>
-    <ItemListContainer saludo='Bienvenidos a Kiri Makeup! 💄'/>
-          </>
+      <NavBar />
+      <ItemListContainer saludo='Bienvenidos a Kiri Makeup! 💄' />
+      <ItemDetailContainer />
+    </>
   )
 }
 
