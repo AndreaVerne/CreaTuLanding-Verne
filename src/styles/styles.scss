@@ -1,8 +1,10 @@
 //General
 @import './base/settings';
+@import '../App.scss';
 //Components
 @import './components/navBar';
 @import './components/itemListContainer';
+@import './components/itemDetailContainer';
 
 //fonts
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
