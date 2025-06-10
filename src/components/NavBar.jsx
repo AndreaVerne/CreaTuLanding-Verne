@@ -3,12 +3,13 @@ import CartWidget from './CartWidget';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavLink } from 'react-bootstrap';
 //import '../css/NavBar.css';
 function NavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">
+        <Navbar.Brand as={NavLink} to='/'>
           <img
             src="/src/assets/kiri.png"
             height="30"

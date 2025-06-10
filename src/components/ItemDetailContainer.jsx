@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import ItemDetail from './ItemDetail';
+import ItemDetail from './Item';
 import { getProducts, getOneProduct } from '../mock/AsyncMock';
 import { Col, Container, Row } from 'react-bootstrap';
 

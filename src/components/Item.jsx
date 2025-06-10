@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import {Link} from "react-router-dom"
 
 const ItemDetail = ({ detail }) => {
-  const {name, price, img, id} = detail;
+  const {name, price, img} = detail;
   return (
     <Card>
       <Card.Img variant="top" src={img} />
@@ -16,8 +16,7 @@ const ItemDetail = ({ detail }) => {
           <span>${price}</span>
         </Card.Text>
         <div className="d-flex justify-content-center">
-          {/* <Link to={'/item/'+id} className="btn">Ver más</Link> */}
-           <Link to={'/item/'} className="btn">Ver más</Link>
+          <Link to={'/item/'+id} className="btn">Ver más</Link>
         </div>
       </Card.Body>
     </Card>
