@@ -5,15 +5,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.scss';
 import './App.scss'
 import ItemDetailContainer from './components/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
   return (
-    <>
+    <BrowserRouter>
       <NavBar />
-      <ItemListContainer saludo='Bienvenidos a Kiri Makeup! 💄' />
-      <ItemDetailContainer />
-    </>
+      <Routes>
+        <Route path='/' element={<ItemListContainer saludo='Bienvenidos a Kiri Makeup! 💄' />} />
+        <Route path='/item' element={<ItemDetailContainer />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
