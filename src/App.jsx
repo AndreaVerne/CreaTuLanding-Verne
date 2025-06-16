@@ -16,7 +16,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer saludo='Bienvenidos a Kiri Makeup! 💄' />} />
-        <Route path='/category/:categoryId' element={<ItemListContainer saludo='Estas en la categoria:' />} />
+        <Route path='/category/:categoryId' element={<ItemListContainer saludo='Estas en la categoria: ' />} />
         <Route path='/item/:id' element={<ItemDetailContainer />} />
         <Route path='*' element={<ErrorPage />} />
       </Routes>

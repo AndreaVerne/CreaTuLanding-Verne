@@ -3,7 +3,7 @@ import CartWidget from './CartWidget';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { NavLink } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom'
 //import '../css/NavBar.css';
 function NavBar() {
   return (
@@ -25,13 +25,12 @@ function NavBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#inicio">Inicio</Nav.Link>
             <NavDropdown title="Productos" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#rostro">Rostro</NavDropdown.Item>
-              <NavDropdown.Item href="#ojos">Ojos</NavDropdown.Item>
-              <NavDropdown.Item href="#labios">Labios</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to='/category/rostro'>Rostro</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to='/category/ojos'>Ojos</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to='/category/labios'>Labios</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#ofertas">
+              <NavDropdown.Item as={NavLink} to='/category/ofertas'>
                 Ofertas
               </NavDropdown.Item>
             </NavDropdown>

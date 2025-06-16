@@ -32,3 +32,21 @@
   border-radius: 20px;
   border: 2px solid $secondary;
 }
+
+.dropdown-item.active, .dropdown-item:active{
+  background-color: $primary !important;
+}
+
+.text-secondary{
+color: $secondary !important;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt-2{
+  margin-top: 2rem !important;
+}
