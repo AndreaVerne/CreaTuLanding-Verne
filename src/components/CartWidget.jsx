@@ -1,12 +1,11 @@
-import { MdOutlineShoppingCart } from "react-icons/md"
-import Badge from 'react-bootstrap/Badge';
+import { MdOutlineShoppingCart } from "react-icons/md";
+import Badge from "react-bootstrap/Badge";
 
 const CartWidget = () => {
-  
   return (
-    <div >
+    <div>
       <MdOutlineShoppingCart className="cart-widget__icon" />
-      <Badge bg="danger">{9}</Badge>
+      <Badge bg="danger">{4}</Badge>
     </div>
   );
 };
