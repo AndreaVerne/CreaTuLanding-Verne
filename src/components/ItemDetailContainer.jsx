@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import Item from './Item';
-import { getProducts, getOneProduct } from '../mock/AsyncMock';
-import { Col, Container, Row } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { getOneProduct } from '../mock/AsyncMock';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import Spinner from 'react-bootstrap/Spinner';
