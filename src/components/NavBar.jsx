@@ -5,7 +5,16 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from 'react-router-dom'
 //import '../css/NavBar.css';
-function NavBar() {
+import React, { useState, useEffect } from 'react';
+import { getCategories } from '../mock/AsyncMock';
+
+const NavBar = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    setCategories(getCategories());
+  }, []);
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -26,9 +35,15 @@ function NavBar() {
             navbarScroll
           >
             <NavDropdown title="Productos" id="navbarScrollingDropdown">
-              <NavDropdown.Item as={NavLink} to='/category/rostro'>Rostro</NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to='/category/ojos'>Ojos</NavDropdown.Item>
-              <NavDropdown.Item as={NavLink} to='/category/labios'>Labios</NavDropdown.Item>
+              {categories.map(category => (
+                <NavDropdown.Item 
+                  key={category} 
+                  as={NavLink} 
+                  to={`/category/${category}`}
+                >
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </NavDropdown.Item>
+              ))}
               <NavDropdown.Divider />
               <NavDropdown.Item as={NavLink} to='/category/ofertas'>
                 Ofertas
@@ -41,6 +56,6 @@ function NavBar() {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default NavBar;

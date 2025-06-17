@@ -10,7 +10,7 @@ const ItemDetail = ({ detail }) => {
   }
   // const {name, price, img, id} = detail;
   return (
-    <div style={{padding:'2rem', display:'flex', flexDirection:'column', alignItems:'center'}}>
+    <div id="itemDetail">
     <h2>Detalle del producto: {detail.name}</h2>
     <img src={detail.img} alt={detail.name}/>
     <p>{detail.description}</p>

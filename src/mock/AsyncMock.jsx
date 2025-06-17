@@ -105,3 +105,8 @@ export const getOneProduct = (id) =>{
       },3000)
   })
 }
+
+export const getCategories = () => {
+  const categories = [...new Set(productos.map(prod => prod.category))];
+  return categories;
+};

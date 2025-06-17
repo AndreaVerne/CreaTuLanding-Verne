@@ -1,0 +1,15 @@
+.page-error {
+    background-image: url('/Error_404.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 7%;
+    margin: auto;
+}
+
