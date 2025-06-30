@@ -5,11 +5,11 @@ import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ detail }) => {
-  const {cart, addItem} = useContext(CartContext);
+  const { cart, addItem } = useContext(CartContext);
   const onAdd = (cantidad) => {
     addItem(detail, cantidad);
   };
-console.log(cart);
+  console.log(cart);
   return (
     <div
       className="itemDetail"
