@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "react-bootstrap/Image";
+import { CartContext } from "../context/CartContext";
 
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ detail }) => {
+  const {cart, addItem} = useContext(CartContext);
   const onAdd = (cantidad) => {
-    alert(`Agregaste ${cantidad} de items`);
+    addItem(detail, cantidad);
   };
-  // const {name, price, img, id} = detail;
+console.log(cart);
   return (
     <div
       className="itemDetail"

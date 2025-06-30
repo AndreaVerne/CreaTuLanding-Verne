@@ -7,12 +7,13 @@ import './App.scss'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ErrorPage from './components/ErrorPage';
-import ItemDetail from './components/Item';
+import { CartProvider } from './context/CartContext';
 
 function App() {
-
+ // initializeApp(firebaseConfig);
   return (
     <BrowserRouter>
+      <CartProvider>
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer saludo='Bienvenidos a Kiri Makeup! 💄' />} />
@@ -20,6 +21,7 @@ function App() {
         <Route path='/item/:id' element={<ItemDetailContainer />} />
         <Route path='*' element={<ErrorPage />} />
       </Routes>
+      </CartProvider>
     </BrowserRouter>
   )
 }
