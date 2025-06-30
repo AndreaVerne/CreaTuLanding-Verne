@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Image from "react-bootstrap/Image";
 import { CartContext } from "../context/CartContext";
 
@@ -6,8 +6,11 @@ import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ detail }) => {
   const { cart, addItem } = useContext(CartContext);
+  const [compra, setCompra] = useState(false);
+
   const onAdd = (cantidad) => {
     addItem(detail, cantidad);
+    setCompra(true);
   };
   console.log(cart);
   return (
@@ -26,7 +29,13 @@ const ItemDetail = ({ detail }) => {
       <p>{detail.description}</p>
       <p>${detail.price},00</p>
       <p>Stock disponible: {detail.stock}</p>
-      <ItemCount stock={detail.stock} onAdd={onAdd} />
+      {!compra ? (
+        <ItemCount stock={detail.stock} onAdd={onAdd} />
+      ) : (
+        <a to="/cart">
+          <button className="btn">Ir al carrito</button>
+        </a>
+      )}
     </div>
   );
 };
