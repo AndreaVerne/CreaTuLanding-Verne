@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+import CartEmpty from "./CartEmpty";
+import CartView from "./CartView";
 
 const CartContainer = () => {
-  return <div>No tiene nada agregado!</div>;
+  const { cart } = useContext(CartContext);
+  return <>{cart.length ? <CartView /> : <CartEmpty />}</>;
 };
 
 export default CartContainer;

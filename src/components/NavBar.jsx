@@ -48,7 +48,7 @@ const NavBar = () => {
                 Ofertas
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#cart" className="justify-content-end">
+            <Nav.Link as={NavLink} to="/cart">
               <CartWidget />
             </Nav.Link>
           </Nav>

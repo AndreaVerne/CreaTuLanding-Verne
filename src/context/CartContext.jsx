@@ -45,7 +45,7 @@ export const CartProvider = ({ children }) => {
   // funcion para sumar el valor total a pagar
   const totalPrice = () => {
     let total = 0;
-    cart.forEach((item) => (total += item.cantidad * item.precio));
+    cart.forEach((item) => (total += item.cantidad * item.price));
     return total;
   };
 
