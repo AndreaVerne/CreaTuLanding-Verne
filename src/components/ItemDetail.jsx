@@ -3,6 +3,7 @@ import Image from "react-bootstrap/Image";
 import { CartContext } from "../context/CartContext";
 
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ detail }) => {
   const { cart, addItem } = useContext(CartContext);
@@ -32,9 +33,9 @@ const ItemDetail = ({ detail }) => {
       {!compra ? (
         <ItemCount stock={detail.stock} onAdd={onAdd} />
       ) : (
-        <a to="/cart">
-          <button className="btn">Ir al carrito</button>
-        </a>
+        <Link to="/cart" className="btn">
+          Ir al carrito
+        </Link>
       )}
     </div>
   );
