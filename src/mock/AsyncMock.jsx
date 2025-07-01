@@ -89,24 +89,24 @@ export const getProducts = () => {
       } else {
         resolve(productos);
       }
-    }, 3000);
+    }, 2000);
   });
 };
-export const getOneProduct = (id) =>{
-  let error = false
-  return new Promise ((resolve, reject)=>{
-      setTimeout(()=>{
-          if(error){
-              reject('Hubo un error')
-          }else{
-              let product= productos.find((prod)=> prod.id === id)
-              resolve(product)
-          }
-      },3000)
-  })
-}
+export const getOneProduct = (id) => {
+  let error = false;
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (error) {
+        reject("Hubo un error");
+      } else {
+        let product = productos.find((prod) => prod.id === id);
+        resolve(product);
+      }
+    }, 2000);
+  });
+};
 
 export const getCategories = () => {
-  const categories = [...new Set(productos.map(prod => prod.category))];
+  const categories = [...new Set(productos.map((prod) => prod.category))];
   return categories;
 };

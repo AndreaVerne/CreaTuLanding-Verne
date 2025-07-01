@@ -1,15 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Image from "react-bootstrap/Image";
 import { CartContext } from "../context/CartContext";
 
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ detail }) => {
-  const {cart, addItem} = useContext(CartContext);
+  const { cart, addItem } = useContext(CartContext);
+  const [compra, setCompra] = useState(false);
+
   const onAdd = (cantidad) => {
     addItem(detail, cantidad);
+    setCompra(true);
   };
-console.log(cart);
+  console.log(cart);
   return (
     <div
       className="itemDetail"
@@ -26,7 +30,13 @@ console.log(cart);
       <p>{detail.description}</p>
       <p>${detail.price},00</p>
       <p>Stock disponible: {detail.stock}</p>
-      <ItemCount stock={detail.stock} onAdd={onAdd} />
+      {!compra ? (
+        <ItemCount stock={detail.stock} onAdd={onAdd} />
+      ) : (
+        <Link to="/cart" className="btn">
+          Ir al carrito
+        </Link>
+      )}
     </div>
   );
 };

@@ -1,0 +1,38 @@
+.cartEmpty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 2rem;
+
+    .icon {
+        color: $secondary;
+        font-size: 5rem;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.cartView {
+    margin-top: 2rem;
+
+    img {
+        max-width: 4rem;
+    }
+
+    .cartItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .total {
+        margin-left: 2rem;
+        font-weight: bold;
+    }
+}
