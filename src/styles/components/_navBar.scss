@@ -1,5 +1,7 @@
+@use '../base/settings';
+
 .bg-body-tertiary {
-    background-color: $primary!important;
+    background-color: settings.$primary!important;
     color: white!important;
     
     .navbar-brand,
@@ -15,7 +17,7 @@
     }
 
     .dropdown-item:hover {
-        background-color: $primary;
+        background-color: settings.$primary;
         color: white;
 
     }

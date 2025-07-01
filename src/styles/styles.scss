@@ -1,14 +1,14 @@
 //General
-@import './base/settings';
-@import '../App.scss';
+@use './base/settings';
+@use '../App.scss';
 //Components
-@import './components/navBar';
-@import './components/itemListContainer';
-@import './components/itemDetailContainer';
-@import './components/errorPage';
-@import './components/itemCount';
-@import './components/itemDetail';
-@import './components/item';
+@use './components/navBar';
+@use './components/itemListContainer';
+@use './components/itemDetailContainer';
+@use './components/errorPage';
+@use './components/itemCount';
+@use './components/itemDetail';
+@use './components/item';
 
 //fonts
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');

@@ -1,3 +1,4 @@
+@use '../base/settings';
 .itemDetail {
     padding: '1rem 10rem';
     display: 'flex';
@@ -7,6 +8,6 @@
 
 .img-thumbnail {
     max-width: 20rem;
-    background-color: $secondary !important;
+    background-color: settings.$secondary !important;
     margin: 1rem;
 }

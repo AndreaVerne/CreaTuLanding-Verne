@@ -1,4 +1,4 @@
-@import './styles/base/settings';
+@use './styles/base/settings';
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 .btn {
-  background-color: $primary;
+  background-color: settings.$primary;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -16,9 +16,8 @@
 }
 
 .btn:hover {
-  background-color: $secondary;
+  background-color: settings.$secondary;
 }
-
 ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 10px;
@@ -28,18 +27,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $primary;
+  background-color: settings.$primary;
   border-radius: 20px;
-  border: 2px solid $secondary;
+  border: 2px solid settings.$secondary;
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: $primary !important;
+  background-color: settings.$primary !important;
 }
 
 .text-secondary {
-  color: $secondary !important;
+  color: settings.$secondary !important;
 }
 
 .center {
