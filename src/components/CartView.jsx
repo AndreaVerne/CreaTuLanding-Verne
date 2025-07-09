@@ -26,8 +26,9 @@ const CartView = () => {
           </div>
         ))}
       </div>
-
+        <div className="contenedor-total">
       <span className="total">Total a pagar: ${totalPrice()}</span>
+      </div>
       <div
         style={{
           display: "flex",

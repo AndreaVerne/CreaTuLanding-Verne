@@ -1,3 +1,5 @@
+@use '../base/settings';
+
 .cartEmpty {
     display: flex;
     flex-direction: column;
@@ -7,7 +9,7 @@
     margin-top: 2rem;
 
     .icon {
-        color: $secondary;
+        color: settings.$secondary;
         font-size: 5rem;
     }
 }
@@ -18,6 +20,7 @@
 
 .cartView {
     margin-top: 2rem;
+    padding: 0 20%;
 
     img {
         max-width: 4rem;
@@ -28,6 +31,13 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        padding: 2rem;
+    }
+
+    .contenedor-total {
+        display: flex;
+        justify-content: flex-end;
+        align-items: right;
         padding: 2rem;
     }
 
