@@ -45,7 +45,7 @@ const CartView = () => {
         <Link className="btn" to="/">
           Seguir comprando
         </Link>
-        <button className="btn btn-success">Terminar Compra 👌🏼</button>
+        <Link className="btn" to="/checkout">Terminar Compra 👌🏼</Link>
       </div>
     </div>
   );
