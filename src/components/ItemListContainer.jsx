@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 //import { getProducts } from "../mock/AsyncMock";
 import LoaderComponent from "./LoaderComponent";
 import { db } from "../Firebase";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
+import { productos } from "../mock/AsyncMock";
 
 const ItemListContainer = (props) => {
   const [data, setData] = useState([]);
@@ -43,6 +44,7 @@ const ItemListContainer = (props) => {
   //     .finally(() => setLoading(false));
   // }, [categoryId]);
 
+  
   return (
     <div className="container">
       <h1 className="text-center">

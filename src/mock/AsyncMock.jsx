@@ -1,6 +1,5 @@
-const productos = [
+export const productos = [
   {
-    id: "01",
     name: "LABIAL LIP GLOSS JIRAFA MINI TANGO 💋",
     description:
       "Labial mate de larga duración con acabado aterciopelado. Ideal para un look sofisticado.",
@@ -10,7 +9,6 @@ const productos = [
     img: "https://cdn.v2.tiendanegocio.com/gallery/37075/img_37075_hzzqirlmbclmz62.jpeg",
   },
   {
-    id: "02",
     name: "SERUM KITTY FLOWER ROCOCO 💕",
     description: "Unifica el tono de la piel y ofrece un acabado no grasoso.",
     stock: 30,
@@ -19,7 +17,6 @@ const productos = [
     img: "https://cdn.v2.tiendanegocio.com/gallery/37075/img_37075_hzzqh17mbbnj662.jpeg",
   },
   {
-    id: "03",
     name: "DELINEADOR ILUMINADOR RETRÁCTIL KAKASAHOW ✨",
     description:
       "Delineador resistente al agua, ideal para delineados duraderos.",
@@ -29,7 +26,6 @@ const productos = [
     img: "https://cdn.v2.tiendanegocio.com/gallery/37075/img_37075_hzzqizjmb2hp3b8.webp",
   },
   {
-    id: "04",
     name: "PALETA SOMBRAS X6 TONOS CORAZÓN KAKASHOW 💖",
     description:
       "Paleta de sombras en tonos nude y tierra para looks naturales.",
@@ -39,7 +35,6 @@ const productos = [
     img: "https://cdn.v2.tiendanegocio.com/gallery/37075/img_37075_hzzq7mgmaoggniy.webp",
   },
   {
-    id: "05",
     name: "RUBOR SELLO CORAZÓN MOCALLURE ❤",
     description:
       "Rubor en polvo con pigmento sedoso para un acabado fresco y natural.",
@@ -49,7 +44,6 @@ const productos = [
     img: "https://cdn.v2.tiendanegocio.com/gallery/37075/img_37075_hzzqitlmbcmbwrn.jpeg",
   },
   {
-    id: "06",
     name: "LABIAL GLOSS HIDRATANTE CLICK NINI SOSO 👄",
     description:
       "Brillo labial con efecto volumen y acabado cristalino. Apto para usar solo o sobre labial.",
@@ -59,7 +53,6 @@ const productos = [
     img: "https://cdn.v2.tiendanegocio.com/gallery/37075/img_37075_z3abcshmbjzx55c.webp",
   },
   {
-    id: "07",
     name: "ILUMINADOR EN POLVO MARIPOSA MINI TANGO 🎇",
     description:
       "Iluminador en polvo con acabado luminoso y brillante. Ideal para resaltar puntos altos del rostro y lograr un glow natural.",
@@ -69,7 +62,6 @@ const productos = [
     img: "https://cdn.v2.tiendanegocio.com/gallery/37075/img_37075_hzzqis2mbclyp6o.jpeg",
   },
   {
-    id: "08",
     name: "LABIAL LÍQ OSITO ROSA GEGE BEAR 🧸",
     description:
       "Labial líquido de larga duración con acabado mate. Fórmula hidratante y empaque en forma de osito para un toque divertido y kawaii.",
