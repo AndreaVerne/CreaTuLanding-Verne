@@ -1,12 +1,30 @@
-# React + Vite
+# Kiri Makeup 🛒💄
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto fue diseñado para enseñar las bases de react con javascript en Coderhouse.
 
-Currently, two official plugins are available:
+![image](/public/readme-img.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Instalación ⬇️
 
-## Expanding the ESLint configuration
+1. Clone el repositorio.
+2. Muevase a la carpeta creada con el comando `cd CreaTuLanding-Verne`.
+3. Ejecute el comando `npm install` para instalar las dependencias.
+4. Ejecute el comando `npm run dev` para iniciar el servidor.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Version Host 💻
+
+Si desea ver el proyecto online, puede ingresar al siguiente link: [CoderFlexApp]()
+
+### Librerias utilizadas 📓
+
+- [React Bootstrap](https://react-bootstrap.netlify.app/): utilizado para el diseño y estilizado de la aplicación.
+
+- [React Router DOM](https://reactrouter.com/): permite la navegación entre diferentes componentes, creando una experiencia de navegación fluida.
+
+- [Firebase](https://firebase.google.com/): utilizada para la gestión de la base de datos.
+
+- [React Icons](https://react-icons.github.io/react-icons/): utilizada para mejorar la interfaz de usuario.
+
+//TODO: Agregar sweetAlert y sass
+
+Desarrollado por Andrea Verne 💋
