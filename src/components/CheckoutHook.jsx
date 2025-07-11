@@ -11,9 +11,12 @@ import { db } from "../Firebase";
 import { useForm } from "react-hook-form";
 import FormField from "./FormField";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+import LoaderComponent from "./LoaderComponent";
 
 const CheckoutHook = () => {
   const [orderId, setOrderId] = useState("");
+  const [loading, setLoading] = useState(false);
   const { cart, totalPrice, clearCart } = useContext(CartContext);
   const {
     register,
@@ -23,7 +26,7 @@ const CheckoutHook = () => {
   } = useForm();
 
   const finalizarCompra = (data) => {
-    console.log(data);
+    setLoading(true);
     let order = {
       comprador: {
         name: data.name,
@@ -59,11 +62,16 @@ const CheckoutHook = () => {
         });
         clearCart();
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => {
+        setLoading(false);
+      });
   };
   return (
     <>
-      {orderId ? (
+      {loading ? (
+        <LoaderComponent />
+      ) : orderId ? (
         <div className="center-column mt-2">
           <h1>Realizaste la compra correctamente! 🥳 🙌🏼</h1>
           <h2>Tu número de orden es: {orderId}</h2>
@@ -72,7 +80,12 @@ const CheckoutHook = () => {
           </a>
         </div>
       ) : cart.length === 0 ? (
-        <h1>No hay productos en el carrito</h1>
+        <div className="center-column mt-2">
+          <h1>No hay productos en el carrito</h1>
+          <Link to="/" className="btn mt-2">
+            Volver al inicio
+          </Link>
+        </div>
       ) : (
         <div className="center-column mt-2">
           <h1>Complete sus datos</h1>
