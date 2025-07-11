@@ -22,7 +22,7 @@ const ItemCount = ({ stock, onAdd }) => {
       id="itemCount"
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <div>
+      <div style={{ display: stock === 0 ? "none" : "" }}>
         <button className="btn operacion" onClick={restar}>
           -
         </button>
@@ -31,10 +31,10 @@ const ItemCount = ({ stock, onAdd }) => {
           +
         </button>
       </div>
-      {/* <button className='btn btn-primary'  disabled={stock === 0} onClick={comprar}>Comprar</button> */}
       <button
+        style={{ display: stock === 0 ? "none" : "" }}
         className="btn mt-2"
-        disabled={stock === 0}
+        disabled={stock === 0 || count === 0}
         onClick={() => comprar()}
       >
         Comprar

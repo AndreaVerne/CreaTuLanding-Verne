@@ -12,24 +12,28 @@ const ItemListContainer = (props) => {
 
   useEffect(() => {
     setLoading(true);
-    const productsCollection = categoryId ?
-    query(collection(db, "products"), where("category", "==", categoryId))
-    : collection(db, "products");
-    getDocs(productsCollection).then((res) => {
-      const list = res.docs.map((doc) => (
-        {
+    const productsCollection = categoryId
+      ? query(collection(db, "products"), where("category", "==", categoryId))
+      : collection(db, "products");
+    getDocs(productsCollection)
+      .then((res) => {
+        const list = res.docs.map((doc) => ({
           id: doc.id,
-          ...doc.data()
-        }
-      ));
-      setData(list);
-    }).catch((error) => console.log(error))
-    .finally(() => setLoading(false));
+          ...doc.data(),
+        }));
+        setData(list);
+      })
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
   }, [categoryId]);
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 6e690af8af6a026d0dff1595089c2c5168625d2f
   return (
     <div className="container">
-      <h1 className="text-center">
+      <h1 className="text-center mt-2 mb-2 tittle-aqua">
         {props.saludo} <i>{categoryId}</i>
       </h1>
       {loading ? <LoaderComponent /> : <ItemList data={data} />}

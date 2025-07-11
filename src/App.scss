@@ -19,12 +19,11 @@
 .btn:hover {
   background-color: settings.$secondary;
 }
+
 ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 10px;
-  /* Ancho de la barra de desplazamiento */
   height: 10px;
-  /* Altura de la barra de desplazamiento */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -57,4 +56,25 @@
 
 .mt-2 {
   margin-top: 2rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 2rem !important;
+}
+
+.margin-2 {
+  margin: 2rem;
+}
+
+.tittle-aqua {
+  // background-image: url('https://media.canva.com/v2/image-resize/format:PNG/height:503/quality:100/uri:ifs%3A%2F%2FM%2F1e4a556d-bb89-4c94-a3b1-8694a0d55add/watermark:F/width:1600?csig=AAAAAAAAAAAAAAAAAAAAAHQ56iZB5U6xvgdhLd5goJBGV3c1LzX7JD7Ma5foC6rr&exp=1752275159&osig=AAAAAAAAAAAAAAAAAAAAANYawmL-1wxJACdSiKIk-xOhHzW3C7z1U08pL4q2KAVG&signer=media-rpc&x-canva-quality=screen_2x');
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 1) 100%),
+    url('https://media.canva.com/v2/image-resize/format:PNG/height:704/quality:100/uri:ifs%3A%2F%2FM%2F6fff40d4-e5b2-4408-bdf9-944a056c46ef/watermark:F/width:1072?csig=AAAAAAAAAAAAAAAAAAAAAKMF_qmjSfNBjxN0d8EbennOPaMKdGAs4kGBYqAA4NWK&exp=1752275655&osig=AAAAAAAAAAAAAAAAAAAAAIqB2NEbILI-cBnP4R6AIwtyRTWiF6j_os1fdOlVxkZ8&signer=media-rpc&x-canva-quality=screen_2x');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  padding: 60px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
