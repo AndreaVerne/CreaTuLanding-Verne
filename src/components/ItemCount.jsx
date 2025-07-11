@@ -23,11 +23,19 @@ const ItemCount = ({ stock, onAdd }) => {
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <div>
-        <button className="btn operacion" onClick={restar}>
+        <button
+          style={{ display: stock === 0 ? "none" : "" }}
+          className="btn operacion"
+          onClick={restar}
+        >
           -
         </button>
-        <span className="btn btn-count">{count}</span>
-        <button className="btn operacion" onClick={sumar}>
+        <span className="btn btn-count">{stock === 0 ? 0 : count}</span>
+        <button
+          style={{ display: stock === 0 ? "none" : "" }}
+          className="btn operacion"
+          onClick={sumar}
+        >
           +
         </button>
       </div>

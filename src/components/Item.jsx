@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const Item = ({ prod }) => {
-  const { name, price, img, id } = prod;
+  const { name, price, img, id, stock } = prod;
   return (
-    <div className="card" style={{ width: "18rem" }}>
+    <div
+      className={`card ${stock === 0 ? "sin-stock" : ""}`}
+      style={{ width: "18rem" }}
+    >
       <img src={img} className="card-img-top" alt={name} />
       <div className="card-body center-column">
         <h5 className="card-title">{name}</h5>
