@@ -1,9 +1,16 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  serverTimestamp,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "../Firebase";
 import { useForm } from "react-hook-form";
 import FormField from "./FormField";
+import Swal from "sweetalert2";
 
 const CheckoutHook = () => {
   const [orderId, setOrderId] = useState("");
@@ -28,11 +35,28 @@ const CheckoutHook = () => {
       total: totalPrice(),
       date: serverTimestamp(),
     };
+
     const ventas = collection(db, "orders");
     //agregar un doc
     addDoc(ventas, order)
       .then((res) => {
         setOrderId(res.id);
+        cart.forEach((element) => {
+          const prod = doc(db, "products", element.id);
+          let nuevo_stock = element.stock - element.cantidad;
+          if (nuevo_stock < 0) {
+            //en caso de que justo 2 personas esten haciendo la misma compra y se agote el stock
+            Swal.fire({
+              title: "Stock insuficiente",
+              text: "No hay stock suficiente para completar la compra",
+              icon: "error",
+            });
+            return;
+          }
+          updateDoc(prod, {
+            stock: nuevo_stock,
+          });
+        });
         clearCart();
       })
       .catch((error) => console.log(error));
