@@ -41,23 +41,22 @@ const CheckoutHook = () => {
   return (
     <>
       {orderId ? (
-        <div>
+        <div className="center-column mt-2">
           <h1>Realizaste la compra correctamente! 🥳 🙌🏼</h1>
           <h2>Tu número de orden es: {orderId}</h2>
+          <a className="btn btn-error mt-2" href="/">
+            Volver al inicio
+          </a>
         </div>
       ) : cart.length === 0 ? (
         <h1>No hay productos en el carrito</h1>
       ) : (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+        <div className="center-column mt-2">
           <h1>Complete sus datos</h1>
-          <form onSubmit={handleSubmit(finalizarCompra)}>
+          <form
+            onSubmit={handleSubmit(finalizarCompra)}
+            style={{ width: "60%" }}
+          >
             <FormField
               label="Nombre"
               name="name"
