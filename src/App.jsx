@@ -12,7 +12,6 @@ import CartContainer from "./components/CartContainer";
 import CheckoutHook from "./components/CheckoutHook";
 
 function App() {
-  // initializeApp(firebaseConfig);
   return (
     <BrowserRouter>
       <CartProvider>

@@ -1,7 +1,7 @@
 //General
 @use './base/settings';
 @use '../App.scss';
-//Components
+//Componentes
 @use './components/navBar';
 @use './components/itemListContainer';
 @use './components/itemDetailContainer';
@@ -11,5 +11,5 @@
 @use './components/item';
 @use './components/cart';
 
-//fonts
+//fuentes
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
