@@ -1,9 +1,10 @@
 import React from "react";
 
-const ErrorPage = () => {
+const ErrorPage = ({message}) => {
   return (
     <div className="page-error">
-      <a className="btn btn-error" href="/">
+      <h1>{message}</h1>
+      <a className="btn btn-error mt-2" href="/">
         Volver al inicio
       </a>
     </div>

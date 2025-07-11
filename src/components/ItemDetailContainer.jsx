@@ -5,6 +5,7 @@ import ItemDetail from "./ItemDetail";
 import LoaderComponent from "./LoaderComponent";
 import { db } from "../Firebase";
 import { doc, getDoc } from "firebase/firestore";
+import ErrorPage from "./ErrorPage";
 
 const ItemDetailContainer = () => {
   const [detail, setDetail] = useState({});
@@ -44,11 +45,7 @@ const ItemDetailContainer = () => {
         {loading ? (
           <LoaderComponent />
         ) : invalid ? (
-          //TODO: Acomodar clase error para mostrar este mensaje
-          <div className="center-column mt-2">
-            <h1>Producto no encontrado 🤔</h1>
-            <Link to="/" className="btn mt-2">Volver al inicio</Link>
-          </div>
+          <ErrorPage message="Producto no encontrado 🤔" />
         ) : (
           <ItemDetail detail={detail} />
         )}

@@ -30,7 +30,10 @@ function App() {
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<CartContainer />} />
           <Route path="/checkout" element={<CheckoutHook />} />
-          <Route path="*" element={<ErrorPage />} />
+          <Route
+            path="*"
+            element={<ErrorPage message="Lo siento, esa página no existe!" />}
+          />
         </Routes>
       </CartProvider>
     </BrowserRouter>
