@@ -31,7 +31,6 @@ const CartView = () => {
     <div className="cartView">
       <h2 className="text-center">Tu carrito 🛒</h2>
       <div>
-        {/* si quieren lo pueden hacer asi tambien */}
         {cart.map((compra) => (
           <div key={compra.id} className="cartItem">
             <img src={compra.img} alt={compra.name} />
@@ -48,26 +47,27 @@ const CartView = () => {
           </div>
         ))}
       </div>
-        <div className="contenedor-total">
-      <span className="total">Total a pagar: ${totalPrice()}</span>
+      <div className="contenedor-total">
+        <span className="total">Total a pagar: ${totalPrice()}</span>
       </div>
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          width: "80%",
           padding: "2rem",
         }}
       >
-        <button className="btn btn-danger" onClick={preConfirm}>
+        <button className="btn btn-danger margin-2" onClick={preConfirm}>
           {" "}
           Vaciar carrito
         </button>
-        <Link className="btn" to="/">
+        <Link className="btn margin-2" to="/">
           Seguir comprando
         </Link>
-        <Link className="btn" to="/checkout">Terminar Compra 👌🏼</Link>
+        <Link className="btn margin-2" to="/checkout">
+          Terminar Compra 👌🏼
+        </Link>
       </div>
     </div>
   );

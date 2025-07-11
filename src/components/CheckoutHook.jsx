@@ -3,7 +3,6 @@ import { CartContext } from "../context/CartContext";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../Firebase";
 import { useForm } from "react-hook-form";
-import SpanMessage from "./SpanMessage";
 import FormField from "./FormField";
 
 const CheckoutHook = () => {
