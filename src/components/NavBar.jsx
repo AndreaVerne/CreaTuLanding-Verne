@@ -19,7 +19,7 @@ const NavBar = () => {
       <Container fluid>
         <Navbar.Brand as={NavLink} to="/">
           <img
-            src="/src/assets/kiri.png"
+            src="/kiri.png"
             height="30"
             className="d-inline-block align-top img"
             alt="Kiri Makeup"
