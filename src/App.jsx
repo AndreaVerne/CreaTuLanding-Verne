@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
 import { CartProvider } from "./context/CartContext";
 import CartContainer from "./components/CartContainer";
+import CheckoutHook from "./components/CheckoutHook";
 
 function App() {
   // initializeApp(firebaseConfig);

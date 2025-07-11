@@ -14,8 +14,8 @@ const CheckoutHook = () => {
     getValues,
   } = useForm();
 
-  const finalizarCompra = (e) => {
-    e.preventDefault();
+  const finalizarCompra = (data) => {
+    console.log(data); 
     let order = {
       // comprador: buyer,
       compras: cart,
@@ -44,13 +44,14 @@ const CheckoutHook = () => {
       ) : (
         <div>
           <h1>Complete sus datos</h1>
-          <form onSubmit={finalizarCompra}>
+          <form onSubmit={handleSubmit(finalizarCompra)}>
             <input
               className="form-control"
               type="text"
               name="name"
               placeholder="Nombre"
-              required
+              {...register("name",{required:true, minLength:3})}
+              
             />
             <input
               className="form-control"

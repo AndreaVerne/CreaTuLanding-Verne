@@ -1,10 +1,32 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const CartView = () => {
   const { cart, clearCart, totalPrice, removeItem } = useContext(CartContext);
 
+  const preConfirm = () => {
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "Cuidado, si eliminas el carrito no se puede revertir.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#f1b0d5",
+      cancelButtonColor: "#9386ad",
+      confirmButtonText: "Sí, vaciar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        clearCart();
+        Swal.fire({
+          title: "Eliminado correctamente",
+          text: "Tu carrito se vació correctamente",
+          confirmButtonColor: "#f1b0d5",
+          icon: "success",
+        });
+      }
+    });
+  };
   return (
     <div className="cartView">
       <h2 className="text-center">Tu carrito 🛒</h2>
@@ -38,7 +60,7 @@ const CartView = () => {
           padding: "2rem",
         }}
       >
-        <button className="btn btn-danger" onClick={clearCart}>
+        <button className="btn btn-danger" onClick={preConfirm}>
           {" "}
           Vaciar carrito
         </button>
