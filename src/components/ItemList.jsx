@@ -1,13 +1,24 @@
-import React from 'react'
-import Item from './Item'
+import React from "react";
+import Item from "./Item";
 
-const ItemList = ({data}) => {
+const ItemList = ({ data }) => {
   return (
-    <div style={{display:'flex', justifyContent:'space-around', alignItems:'center', flexWrap:'wrap'}}>
-        {data.length === 0 && <p>No hay productos disponibles</p>}
-        {data.map((prod)=> <Item key={prod.id} prod={prod}/>)}
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center",
+        flexWrap: "wrap",
+      }}
+    >
+      {data.length === 0 && (
+        <p className="mt-2">No hay productos disponibles</p>
+      )}
+      {data.map((prod) => (
+        <Item key={prod.id} prod={prod} />
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default ItemList
+export default ItemList;

@@ -30,7 +30,7 @@ const ItemListContainer = (props) => {
 
   return (
     <div className="container">
-      <h1 className="text-center">
+      <h1 className="text-center mt-2 mb-2 tittle-aqua">
         {props.saludo} <i>{categoryId}</i>
       </h1>
       {loading ? <LoaderComponent /> : <ItemList data={data} />}

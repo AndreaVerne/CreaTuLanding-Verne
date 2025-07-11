@@ -48,6 +48,9 @@ const NavBar = () => {
                 Ofertas
               </NavDropdown.Item>
             </NavDropdown>
+          </Nav>
+
+          <Nav className="ms-auto">
             <Nav.Link as={NavLink} to="/cart">
               <CartWidget />
             </Nav.Link>
