@@ -3,6 +3,8 @@ import { CartContext } from "../context/CartContext";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../Firebase";
 import { useForm } from "react-hook-form";
+import SpanMessage from "./SpanMessage";
+import FormField from "./FormField";
 
 const CheckoutHook = () => {
   const [orderId, setOrderId] = useState("");
@@ -15,22 +17,26 @@ const CheckoutHook = () => {
   } = useForm();
 
   const finalizarCompra = (data) => {
-    console.log(data); 
+    console.log(data);
     let order = {
-      // comprador: buyer,
+      comprador: {
+        name: data.name,
+        lastname: data.lastname,
+        address: data.address,
+        email: data.email,
+      },
       compras: cart,
       total: totalPrice(),
       date: serverTimestamp(),
     };
-    // const ventas = collection(db, "orders");
-    // addDoc(ventas, order)
-    //   .then((res) => {
-    //     setOrderId(res.id);
-    //     clearCart();
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+    const ventas = collection(db, "orders");
+    //agregar un doc
+    addDoc(ventas, order)
+      .then((res) => {
+        setOrderId(res.id);
+        clearCart();
+      })
+      .catch((error) => console.log(error));
   };
   return (
     <>
@@ -42,60 +48,110 @@ const CheckoutHook = () => {
       ) : cart.length === 0 ? (
         <h1>No hay productos en el carrito</h1>
       ) : (
-        <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <h1>Complete sus datos</h1>
           <form onSubmit={handleSubmit(finalizarCompra)}>
-            <input
-              className="form-control"
-              type="text"
+            <FormField
+              label="Nombre"
               name="name"
-              placeholder="Nombre"
-              {...register("name",{required:true, minLength:3})}
-              
+              placeholder="Ingrese su nombre"
+              register={register}
+              validation={{ required: true, minLength: 3 }}
+              errors={errors}
+              errorMessages={{
+                required: "Por favor complete este campo",
+                minLength:
+                  "El campo nombre debe contener 3 caracteres como mínimo",
+              }}
             />
-            <input
-              className="form-control"
-              type="text"
-              name="lastName"
-              placeholder="Apellido"
-              required
+
+            <FormField
+              label="Apellido"
+              name="lastname"
+              placeholder="Ingrese su apellido"
+              register={register}
+              validation={{ required: true, minLength: 2 }}
+              errors={errors}
+              errorMessages={{
+                required: "Por favor complete este campo",
+                minLength:
+                  "El campo apellido debe contener 2 caracteres como mínimo",
+              }}
             />
-            <input
-              className="form-control"
-              type="text"
-              name="direccion"
-              placeholder="Direccion"
-              required
+
+            <FormField
+              label="Dirección"
+              name="address"
+              placeholder="Ingrese su dirección"
+              register={register}
+              validation={{ required: true, minLength: 10, maxLength: 35 }}
+              errors={errors}
+              errorMessages={{
+                required: "Por favor complete este campo",
+                minLength:
+                  "El campo dirección debe contener 10 caracteres como mínimo",
+                maxLength: "El campo dirección es demasiado largo",
+              }}
             />
-            <input
-              className="form-control"
-              type="email"
+
+            <FormField
+              label="Email"
               name="email"
-              placeholder="Ingrese su email"
-              required
-            />
-            <input
-              className="form-control"
               type="email"
-              name="second-email"
-              placeholder="Repita su email"
-              required
+              placeholder="Ingrese su correo"
+              register={register}
+              validation={{ required: true }}
+              errors={errors}
+              errorMessages={{
+                required: "Por favor complete este campo",
+              }}
             />
-            <input
-              className="form-control"
-              type="number"
-              name="phone"
-              placeholder="Telefono"
-              required
+
+            <FormField
+              label="Confirmar mail"
+              name="secondemail"
+              type="email"
+              placeholder="Repita su correo"
+              register={register}
+              validation={{
+                required: true,
+                validate: {
+                  equalsMails: (mail2) => mail2 === getValues().email,
+                },
+              }}
+              errors={errors}
+              errorMessages={{
+                required: "Por favor complete este campo",
+                equalsMails: "Los mails deben ser iguales",
+              }}
             />
-            <button className="btn btn-success" type="submit">
-              Enviar
-            </button>
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <button
+                className="btn btn-success"
+                type="submit"
+                disabled={!cart.length}
+              >
+                Enviar
+              </button>
+            </div>
           </form>
         </div>
       )}
     </>
   );
 };
-
 export default CheckoutHook;
