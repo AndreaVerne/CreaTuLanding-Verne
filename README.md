@@ -25,6 +25,6 @@ Si desea ver el proyecto online, puede ingresar al siguiente link: [CoderFlexApp
 
 - [React Icons](https://react-icons.github.io/react-icons/): utilizada para mejorar la interfaz de usuario.
 
-//TODO: Agregar sweetAlert y sass
+- [SweerAlert](https://sweetalert2.github.io/): utilizada para mejorar los mensajes de alerta de la aplicación.
 
 Desarrollado por Andrea Verne 💋

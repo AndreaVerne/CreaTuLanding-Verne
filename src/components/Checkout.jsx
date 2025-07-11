@@ -5,7 +5,7 @@ import { db } from '../Firebase';
 
 const Checkout = () => {
     const [buyer, setBuyer] = useState({});
-    const [validMail, setValidMail] = useState(''); //TODO: hacer funcion de comprobacion
+    const [validMail, setValidMail] = useState(''); 
     const [orderId, setOrderId] = useState('');
     const {cart, totalPrice, clearCart} = useContext(CartContext);
 
