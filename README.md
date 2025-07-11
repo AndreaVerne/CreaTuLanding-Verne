@@ -2,7 +2,7 @@
 
 Este proyecto fue diseñado para enseñar las bases de react con javascript en Coderhouse.
 
-![image](/public/readme-img.png)
+![image](/public/readme-img-2.png)
 
 ### Instalación ⬇️
 
