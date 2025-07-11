@@ -16,10 +16,11 @@ const ItemDetailContainer = () => {
     setLoading(true);
     const product = doc(db, "products", id);
     getDoc(product).then((res) => {
-      if(res){
+      let data = res.data();
+      if(data){
         setDetail({
           id: res.id,
-          ...res.data()
+          ...data
         });
       }
       else{
@@ -44,9 +45,9 @@ const ItemDetailContainer = () => {
           <LoaderComponent />
         ) : invalid ? (
           //TODO: Acomodar clase error para mostrar este mensaje
-          <div>
-            <p>Producto no encontrado </p>
-            <Link to="/">Volver al inicio</Link>
+          <div className="center-column mt-2">
+            <h1>Producto no encontrado 🤔</h1>
+            <Link to="/" className="btn mt-2">Volver al inicio</Link>
           </div>
         ) : (
           <ItemDetail detail={detail} />

@@ -26,11 +26,8 @@ const ItemListContainer = (props) => {
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
   }, [categoryId]);
-<<<<<<< HEAD
   
-=======
 
->>>>>>> 6e690af8af6a026d0dff1595089c2c5168625d2f
   return (
     <div className="container">
       <h1 className="text-center mt-2 mb-2 tittle-aqua">
